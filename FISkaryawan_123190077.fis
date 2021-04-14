@@ -1,0 +1,71 @@
+[System]
+Name='FISkaryawan_123190077'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='kinerja'
+Range=[0 10]
+NumMFs=3
+MF1='buruk':'trimf',[0 0 4]
+MF2='baik':'trimf',[4 5.5 7]
+MF3='bagus':'trimf',[7 10 10]
+
+[Input2]
+Name='project'
+Range=[0 15]
+NumMFs=3
+MF1='kurang':'trimf',[0 0 5]
+MF2='cukup':'trimf',[5 7.5 10]
+MF3='banyak':'trimf',[10 15 15]
+
+[Input3]
+Name='kedisiplinan'
+Range=[0 10]
+NumMFs=3
+MF1='terlambat':'trimf',[0 0 4]
+MF2='tepat':'trimf',[4 5 6]
+MF3='cepat':'trimf',[6 10 10]
+
+[Output1]
+Name='naikJabatan'
+Range=[0 6]
+NumMFs=2
+MF1='tidak':'trimf',[0 1.5 3]
+MF2='ya':'trimf',[3 4.5 6]
+
+[Output2]
+Name='dapatBonus'
+Range=[0 20]
+NumMFs=3
+MF1='sedikit':'trimf',[0 3 6]
+MF2='sedang':'trimf',[6 10 14]
+MF3='banyak':'trimf',[14 18 20]
+
+[Output3]
+Name='karyawanTerbaik'
+Range=[0 10]
+NumMFs=3
+MF1='buruk':'trimf',[0 1.5 3]
+MF2='cukup':'trimf',[3 5 7]
+MF3='baik':'trimf',[7 8.5 10]
+
+[Rules]
+2 2 3, 1 2 2 (1) : 1
+3 2 3, 2 2 3 (1) : 1
+2 3 3, 1 3 3 (1) : 1
+3 2 2, 2 2 3 (1) : 1
+1 1 1, 1 0 1 (1) : 1
+3 1 1, 1 1 2 (1) : 1
+3 1 3, 1 2 2 (1) : 1
+3 3 3, 2 3 3 (1) : 1
+1 3 1, 1 2 1 (1) : 1
+1 3 3, 1 2 2 (1) : 1
